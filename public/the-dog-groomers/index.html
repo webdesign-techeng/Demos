@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Dog Groomers Wigan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, local, reassuring — a small salon owners trust with their dog.
+   IDEA: the salon's shop window on Park Road, freshly washed, bubbles still drifting.
+   PICTURE: a just-groomed fluffy dog sitting proudly on a towel, bubbles rising behind.
+   COLOUR and TYPE: bath-time blue fields, clean white, sunny yellow accent; Fredoka + Nunito.
+   LAYOUT: preview strip, nav, hero scene, services, hours + find us, reviews, contact, footer. */
+:root{color-scheme:light dark;
+  --bg:light-dark(#ffffff,#0f1c2b);--ink:light-dark(#172636,#eaf2fb);--soft:light-dark(#5a6b7c,#a9bccf);
+  --blue:light-dark(#2f74c0,#2a5f9c);--blue2:light-dark(#e9f3fd,#16273a);--deep:light-dark(#173a63,#0a1624);
+  --sun:#ffc93c;--card:light-dark(#ffffff,#17283b);--line:light-dark(#dce8f4,#24384e)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Nunito",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Fredoka","Nunito",sans-serif;font-weight:600;line-height:1.08;margin:0;text-wrap:balance}
+h1{font-size:clamp(36px,5.4vw,56px)}h2{font-size:clamp(28px,3.6vw,40px)}h3{font-size:21px}
+a{color:inherit}
+.band{padding:clamp(40px,6vw,84px) max(5vw,18px)}
+.in{max-width:1180px;margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:999px;font:600 16px "Nunito",sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.btn.sun{background:var(--sun);color:#1d2a38}.btn.sun:hover{background:#ffd666}
+.btn.ghost{color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.7)}.btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+.preview{background:var(--sun);color:#1d2a38;font-size:14px;padding:9px max(5vw,18px);text-align:center}
+.preview b{font-weight:700}.preview span{white-space:nowrap}
+
+nav{position:sticky;top:0;z-index:5;background:var(--deep);color:#fff}
+nav .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px max(5vw,18px);max-width:none}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 20px "Fredoka",sans-serif}
+.logo svg{width:34px;height:34px}
+.links{display:flex;gap:22px;align-items:center;font-weight:600;font-size:15px}
+.links a{text-decoration:none;opacity:.9}.links a:hover{opacity:1}
+@media(max-width:760px){.links a:not(.btn){display:none}}
+@media(max-width:520px){.hs{display:none}.logo{font-size:18px}}
+
+.hero{background:linear-gradient(180deg,var(--blue) 0%,var(--deep) 100%);color:#fff;overflow:hidden}
+.hero .in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(20px,4vw,56px);align-items:center}
+.hero p.lead{font-size:clamp(17px,1.6vw,19px);color:#dcecff;max-width:34em;margin:18px 0 28px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.where{margin-top:22px;font-size:15px;color:#cfe3fb}
+.scene{position:relative;aspect-ratio:1/1;max-height:520px;width:100%}
+.scene svg{width:100%;height:100%;display:block}
+.bub{animation:rise 7s ease-in infinite}
+.bub:nth-of-type(2n){animation-duration:9s;animation-delay:-3s}.bub:nth-of-type(3n){animation-duration:11s;animation-delay:-6s}
+@keyframes rise{0%{transform:translateY(40px);opacity:0}15%{opacity:.9}100%{transform:translateY(-260px);opacity:0}}
+@media(prefers-reduced-motion:reduce){.bub{animation:none}}
+@media(max-width:600px){.hero .in{grid-template-columns:1fr}.scene{max-width:340px;margin:0 auto;order:-1}}
+
+.head{max-width:640px;margin-bottom:32px}.head p{color:var(--soft);margin-top:10px}
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px}
+.svc .ic{width:52px;height:52px;border-radius:16px;background:var(--blue2);display:grid;place-items:center;margin-bottom:14px}
+.svc .ic svg{width:28px;height:28px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc p{color:var(--soft);margin:8px 0 0;font-size:16px}
+.note{font-size:14px;color:var(--soft);margin-top:18px}
+@media(max-width:900px){.services{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.services{grid-template-columns:1fr}}
+
+.tint{background:var(--blue2)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+.panel{background:var(--card);border-radius:22px;padding:clamp(22px,3vw,34px);border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;margin-top:16px;font-size:16px}
+td{padding:12px 4px;border-bottom:1px solid var(--line)}td:last-child{text-align:right;white-space:nowrap;font-weight:700}
+tr.closed td:last-child{color:var(--soft);font-weight:600}
+tr.today td{color:var(--blue);font-weight:700}
+tr.today td:first-child::after{content:"Today";margin-left:8px;font-size:12px;background:var(--sun);color:#1d2a38;padding:2px 8px;border-radius:99px;vertical-align:2px}
+.status{display:inline-block;margin-top:6px;font-weight:700;font-size:15px}
+.addr{font-size:18px;margin:14px 0 18px}
+.mapcard{border-radius:16px;background:linear-gradient(135deg,var(--blue2),var(--card));border:1px solid var(--line);padding:18px;display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.mapcard svg{flex:none;width:44px;height:44px}
+
+.reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.rv{border:2px dashed var(--line);border-radius:20px;padding:24px;color:var(--soft);min-height:150px}
+.stars{color:var(--sun);font-size:20px;letter-spacing:2px}
+@media(max-width:760px){.reviews{grid-template-columns:1fr}}
+
+.contact{background:var(--deep);color:#fff}
+.contact .in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;align-items:center}
+.contact p{color:#cfe3fb}
+.lines{display:grid;gap:12px}
+.line{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;background:rgba(255,255,255,.08);border-radius:16px;padding:16px 18px}
+.line span{color:#a9c6e8;font-size:14px}.line a,.line b{font-weight:700;text-decoration:none;overflow-wrap:anywhere}
+@media(max-width:760px){.contact .in{grid-template-columns:1fr}}
+
+footer{background:#0a1624;color:#9fb6cf;font-size:14px;padding:26px max(5vw,18px)}
+footer .in{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<div class="preview"><b>Website preview</b> made for The Dog Groomers by Liam Pike · <span>07828 761631</span> · <span>Liampikey22@gmail.com</span></div>
+
+<nav><div class="in">
+  <a class="logo" href="#top" aria-label="The Dog Groomers, home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="20" fill="#ffc93c"/><g fill="#173a63"><ellipse cx="20" cy="25" rx="7" ry="6"/><circle cx="11.5" cy="17" r="3.3"/><circle cx="17" cy="12.5" r="3.3"/><circle cx="23" cy="12.5" r="3.3"/><circle cx="28.5" cy="17" r="3.3"/></g></svg>
+    The Dog Groomers
+  </a>
+  <div class="links">
+    <a href="#services">Services</a><a href="#hours">Opening hours</a><a href="#find">Find us</a>
+    <a class="btn sun" href="tel:+447469800935" style="white-space:nowrap">Call<span class="hs"> 07469 800935</span></a>
+  </div>
+</div></nav>
+
+<header class="hero band" id="top"><div class="in">
+  <div>
+    <h1>Fresh, fluffy and happy. Dog grooming on Park Road, Wigan.</h1>
+    <p class="lead">From a quick bath and brush to a full groom, your dog is looked after with patience and care, and goes home looking and feeling their best.</p>
+    <div class="ctas">
+      <a class="btn sun" href="tel:+447469800935">Call to book: 07469 800935</a>
+      <a class="btn ghost" href="#hours">Opening hours</a>
+    </div>
+    <p class="where">157 Park Road, Wigan WN6 7AG · <span id="openNow">Open Monday to Saturday (closed Thursdays)</span></p>
+  </div>
+
+  <div class="scene" aria-hidden="true">
+    <svg viewBox="0 0 400 400">
+      <defs>
+        <radialGradient id="fur" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#f3ede4"/><stop offset="1" stop-color="#dcd2c3"/></radialGradient>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffffff" stop-opacity=".35"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="towel" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ffd666"/><stop offset="1" stop-color="#f2b322"/></linearGradient>
+        <g id="b"><circle r="1" fill="#ffffff" fill-opacity=".18" stroke="#ffffff" stroke-opacity=".7" stroke-width=".08"/><circle cx="-.35" cy="-.35" r=".22" fill="#fff" fill-opacity=".8"/></g>
+      </defs>
+      <!-- window arch -->
+      <path d="M60 380V170a140 140 0 0 1 280 0v210z" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".25" stroke-width="3"/>
+      <circle cx="200" cy="200" r="170" fill="url(#glow)"/>
+      <!-- bubbles -->
+      <g class="bub"><use href="#b" transform="translate(92 300) scale(16)"/></g>
+      <g class="bub"><use href="#b" transform="translate(320 280) scale(22)"/></g>
+      <g class="bub"><use href="#b" transform="translate(300 330) scale(11)"/></g>
+      <g class="bub"><use href="#b" transform="translate(110 250) scale(9)"/></g>
+      <g class="bub"><use href="#b" transform="translate(345 210) scale(13)"/></g>
+      <g class="bub"><use href="#b" transform="translate(70 200) scale(14)"/></g>
+      <!-- towel -->
+      <ellipse cx="200" cy="356" rx="138" ry="20" fill="#0a1624" fill-opacity=".35"/>
+      <path d="M78 340q122-26 244 0l-10 22q-112-20-224 0z" fill="url(#towel)"/>
+      <path d="M92 350q108-18 216 0" stroke="#fff" stroke-opacity=".6" stroke-width="3" fill="none" stroke-dasharray="2 8" stroke-linecap="round"/>
+      <!-- dog body (fluffy clusters) -->
+      <g fill="url(#fur)">
+        <circle cx="160" cy="300" r="40"/><circle cx="240" cy="300" r="40"/><circle cx="200" cy="270" r="54"/>
+        <circle cx="152" cy="250" r="30"/><circle cx="248" cy="250" r="30"/>
+        <!-- front legs -->
+        <rect x="168" y="292" width="26" height="54" rx="13"/><rect x="206" y="292" width="26" height="54" rx="13"/>
+        <circle cx="181" cy="344" r="16"/><circle cx="219" cy="344" r="16"/>
+        <!-- tail -->
+        <circle cx="292" cy="268" r="20"/><circle cx="304" cy="246" r="16"/>
+      </g>
+      <!-- head -->
+      <g fill="url(#fur)">
+        <circle cx="200" cy="168" r="58"/>
+        <circle cx="170" cy="118" r="26"/><circle cx="200" cy="108" r="28"/><circle cx="230" cy="118" r="26"/>
+      </g>
+      <!-- ears -->
+      <g fill="#e9e0d1"><ellipse cx="140" cy="182" rx="24" ry="40" transform="rotate(14 140 182)"/><ellipse cx="260" cy="182" rx="24" ry="40" transform="rotate(-14 260 182)"/></g>
+      <g fill="#f7f2ea"><circle cx="138" cy="160" r="14"/><circle cx="262" cy="160" r="14"/><circle cx="134" cy="206" r="15"/><circle cx="266" cy="206" r="15"/></g>
+      <!-- face -->
+      <ellipse cx="200" cy="196" rx="34" ry="26" fill="#ffffff"/>
+      <circle cx="178" cy="166" r="7" fill="#172636"/><circle cx="222" cy="166" r="7" fill="#172636"/>
+      <circle cx="180.5" cy="163.5" r="2.2" fill="#fff"/><circle cx="224.5" cy="163.5" r="2.2" fill="#fff"/>
+      <ellipse cx="200" cy="186" rx="11" ry="8" fill="#172636"/>
+      <path d="M200 194v8M188 204q12 10 24 0" stroke="#172636" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="200" cy="214" rx="7" ry="6" fill="#f28b9b"/>
+      <circle cx="166" cy="190" r="7" fill="#f6b3be" fill-opacity=".6"/><circle cx="234" cy="190" r="7" fill="#f6b3be" fill-opacity=".6"/>
+      <!-- bow -->
+      <g transform="translate(232 104) rotate(14)"><path d="M0 0l-20-12v24zM0 0l20-12v24z" fill="#ffc93c" stroke="#e0a514" stroke-width="2" stroke-linejoin="round"/><circle r="6" fill="#f2b322"/></g>
+      <!-- sparkle -->
+      <g fill="#ffc93c"><path d="M318 136l5 12 12 5-12 5-5 12-5-12-12-5 12-5z"/><path d="M92 142l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/></g>
+    </svg>
+  </div>
+</div></header>
+
+<section class="band" id="services"><div class="in">
+  <div class="head">
+    <h2>Grooming for every dog</h2>
+    <p>Whatever the breed or coat, we'll make sure your dog leaves clean, comfortable and looking great.</p>
+  </div>
+  <div class="services" id="svcGrid"></div>
+  <p class="note">Sample services for this preview. We'll add your exact services and prices.</p>
+</div></section>
+
+<section class="band tint" id="hours"><div class="in two">
+  <div class="panel">
+    <h2>Opening hours</h2>
+    <div class="status" id="status"></div>
+    <table><tbody id="hoursBody"></tbody></table>
+  </div>
+  <div class="panel" id="find">
+    <h2>Find us</h2>
+    <p class="addr"><b>157 Park Road</b><br>Wigan, WN6 7AG</p>
+    <div class="mapcard">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#2f74c0"/><path d="M22 10a8 8 0 0 0-8 8c0 6 8 15 8 15s8-9 8-15a8 8 0 0 0-8-8z" fill="#ffc93c"/><circle cx="22" cy="18" r="3" fill="#173a63"/></svg>
+      <div>A short walk from Mesnes Park and the town centre.</div>
+    </div>
+    <a class="btn sun" href="https://www.google.com/maps/search/?api=1&query=157+Park+Road+Wigan+WN6+7AG">Get directions</a>
+  </div>
+</div></section>
+
+<section class="band"><div class="in">
+  <div class="head">
+    <h2>What our customers say</h2>
+    <p>Your real Google and Facebook reviews will go here.</p>
+  </div>
+  <div class="reviews">
+    <div class="rv"><div class="stars">★★★★★</div><p>Your customer's review here.</p></div>
+    <div class="rv"><div class="stars">★★★★★</div><p>Your customer's review here.</p></div>
+    <div class="rv"><div class="stars">★★★★★</div><p>Your customer's review here.</p></div>
+  </div>
+</div></section>
+
+<section class="band contact" id="contact"><div class="in">
+  <div>
+    <h2>Book your dog in</h2>
+    <p>Give us a call or send a message and we'll find a time that suits you and your dog.</p>
+    <a class="btn sun" href="tel:+447469800935" style="margin-top:14px">Call 07469 800935</a>
+  </div>
+  <div class="lines">
+    <div class="line"><span>Phone</span><a href="tel:+447469800935">07469 800935</a></div>
+    <div class="line"><span>Email</span><a href="mailto:TheDogGroomers@outlook.com">TheDogGroomers@outlook.com</a></div>
+    <div class="line"><span>Facebook</span><a href="https://facebook.com/thedoggroomerswigan">/thedoggroomerswigan</a></div>
+  </div>
+</div></section>
+
+<footer><div class="in">
+  <span>© The Dog Groomers · 157 Park Road, Wigan WN6 7AG</span>
+  <span>Website preview by Liam Pike · 07828 761631 · <a href="mailto:Liampikey22@gmail.com">Liampikey22@gmail.com</a></span>
+</div></footer>
+
+<script>
+{
+  const icons = {
+    scissors:'<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/>',
+    bath:'<path d="M3 12h18v3a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M6 12V5a2 2 0 0 1 4 0"/><circle cx="15" cy="6" r="1.5"/><circle cx="18" cy="9" r="1"/>',
+    puppy:'<circle cx="12" cy="13" r="6"/><path d="M6 10 4 5l4 2M18 10l2-5-4 2"/><circle cx="10" cy="12" r=".6"/><circle cx="14" cy="12" r=".6"/><path d="M11 15.5h2"/>',
+    nail:'<path d="M12 3c3 0 5 3 5 7s-2 11-5 11-5-7-5-11 2-7 5-7z"/><path d="M9 8h6"/>',
+    brush:'<path d="M4 20 14 10"/><rect x="13" y="3" width="8" height="8" rx="2" transform="rotate(45 17 7)"/>',
+    sparkle:'<path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/>'
+  };
+  const services = [
+    ['scissors','Full groom','Bath, blow-dry, haircut and style, nails and ears. The complete pamper.'],
+    ['bath','Bath & brush','A deep clean, conditioner and thorough brush-out between full grooms.'],
+    ['puppy','Puppy’s first groom','A gentle, unhurried introduction so your puppy learns to love grooming.'],
+    ['brush','De-shedding','Removes loose undercoat to cut down shedding around the house.'],
+    ['nail','Nail trim','A quick in-and-out trim to keep paws comfortable.'],
+    ['sparkle','Tidy-up trim','Face, feet and hygiene areas kept neat between full grooms.']
+  ];
+  document.getElementById('svcGrid').innerHTML = services.map(([i,t,d]) =>
+    `<div class="svc"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${icons[i]}</svg></div><h3>${t}</h3><p>${d}</p></div>`).join('');
+
+  const days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+  const open = {0:[10,17],1:[10,17],2:[10,17],4:[10,17],5:[10,17]};
+  const now = new Date(), today = (now.getDay()+6)%7, h = now.getHours()+now.getMinutes()/60;
+  document.getElementById('hoursBody').innerHTML = days.map((d,i) => {
+    const o = open[i];
+    return `<tr class="${o?'':'closed'} ${i===today?'today':''}"><td>${d}</td><td>${o?'10am – 5pm':'Closed'}</td></tr>`;
+  }).join('');
+  const o = open[today], isOpen = o && h >= o[0] && h < o[1];
+  const s = document.getElementById('status');
+  s.textContent = isOpen ? 'Open now, until 5pm' : 'Closed right now';
+  s.style.color = isOpen ? '#1f9d57' : 'var(--soft)';
+  if (isOpen) document.getElementById('openNow').textContent = 'Open now, until 5pm';
+}
+</script>
+</body>
+</html>
